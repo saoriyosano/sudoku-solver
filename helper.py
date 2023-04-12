@@ -25,5 +25,16 @@ def get_mini_grids(grid):
             
     return smallgrids
 
+def input_to_grid(*args):
+    ret = []
+    # columns to rows
+    for i in range(9):
+        ret.append([0 if arg[i]=="" else int(arg[i]) for arg in args])
+    return ret
 
-                        
+def grid_to_input(grid):
+    ret = []
+    # rows to columns
+    for i in range(9):
+        ret.append(["" if row[i]==0 else row[i] for row in grid])
+    return ret        
